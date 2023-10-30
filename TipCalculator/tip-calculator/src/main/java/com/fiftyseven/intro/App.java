@@ -1,4 +1,4 @@
-package com.fifty-seven.intro;
+package com.fiftyseven.intro;
 
 /**
  * Hello world!

@@ -4,4 +4,4 @@ Based on The Pragmatic Programmers 'Exercises for Programmers: 57 Challenges to 
 
 These challenges were developed using Java (JDK 17).
 
-## 1. Tip Calculator
+## 0. Tip Calculator

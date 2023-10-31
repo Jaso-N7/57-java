@@ -4,10 +4,14 @@ import java.math.BigDecimal;
 import java.math.MathContext;
 
 /**
- * Hello world!
+ * Implements a simple tip calculator
  *
+ * <p>USAGE: 
+ * {@code 
+ *   TipCalculator tc = TipCalculator.instance(billAmount, tipRate); 
+ * }
  */
-public class TipCalculator 
+public final class TipCalculator 
 {
     private final BigDecimal billAmount;
     private final double tipRate;
@@ -21,22 +25,39 @@ public class TipCalculator
         this.tipRate = tipRate;
     }
     
+    /**
+     * Returns a new {@code TipCalculator} instance.
+     * 
+     * @param billAmount
+     * @param tipRate
+     * @return a new {@code TipCalculator} instance
+     */
     public static TipCalculator instance(BigDecimal billAmount, double tipRate) {
         return new TipCalculator(billAmount, tipRate);
     }
     
-    // REQUIRES: billAmount >= 0.00 & tipRate >= 0.00
-    // MODIFIES: updates the tip amount
-    // EFFECTS: returns the tip
+    /**
+     * Gets the tip that will be applied to the total due.
+     * <p>
+     * This method requires the bill amount and the tip rate to be greater than
+     * or equal to zero.
+     * 
+     * @return the tip as a dollar amount
+     */
     public BigDecimal tip () {
         var rate = BigDecimal.valueOf(tipRate);
                 
         return billAmount.multiply(rate.divide(PERC)).round(mc);
     }
     
-    // REQUIRES: billAmount >= 0.00 & tipRate >= 0.00
-    // MODIFIES: updates the total
-    // EFFECTS: calculates and returns the total
+    /**
+     * Gets the total due on the bill, including any applied tips.
+     * <p>
+     * For this to work correctly, the bill amount and tip rate are required to
+     * be greater than or equal to zero.
+     * 
+     * @return the total
+     */
     public BigDecimal total () {
         return billAmount.add(tip());
     }

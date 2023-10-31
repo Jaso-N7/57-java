@@ -13,6 +13,7 @@ public class TipCalculator
     private final double tipRate;
     
     private final static BigDecimal PERC = new BigDecimal("100.00");
+    private final static MathContext mc = new MathContext(3);
     
     
     private TipCalculator (BigDecimal billAmount, double tipRate) {
@@ -29,8 +30,7 @@ public class TipCalculator
     // EFFECTS: returns the tip
     public BigDecimal tip () {
         var rate = BigDecimal.valueOf(tipRate);
-        MathContext mc = new MathContext(3);
-        
+                
         return billAmount.multiply(rate.divide(PERC)).round(mc);
     }
     

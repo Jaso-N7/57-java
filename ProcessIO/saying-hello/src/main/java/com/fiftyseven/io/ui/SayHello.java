@@ -1,10 +1,10 @@
-package com.fiftyseven.io;
+package com.fiftyseven.io.ui;
 
 /**
  * Hello world!
  *
  */
-public class App 
+public class SayHello 
 {
     public static void main( String[] args )
     {

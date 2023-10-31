@@ -38,6 +38,9 @@ public class TipCalculatorTest
         var expectedTip10 = new BigDecimal("1.50");
         var expectedTip1125 = new BigDecimal("1.69");
         
+        System.out.println(tc_10);
+        System.out.println(tc_11_25);
+        
         assertTrue(tc_10.tip().equals(expectedTip10));
         assertTrue(tc_11_25.tip().equals(expectedTip1125));
     }

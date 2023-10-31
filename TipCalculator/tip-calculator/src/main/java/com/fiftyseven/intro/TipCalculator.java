@@ -1,6 +1,7 @@
 package com.fiftyseven.intro;
 
 import java.math.BigDecimal;
+import java.math.MathContext;
 
 /**
  * Hello world!
@@ -10,6 +11,8 @@ public class TipCalculator
 {
     private final BigDecimal billAmount;
     private final double tipRate;
+    
+    private final static BigDecimal PERC = new BigDecimal("100.00");
     
     
     private TipCalculator (BigDecimal billAmount, double tipRate) {
@@ -23,10 +26,12 @@ public class TipCalculator
     
     // REQUIRES: billAmount >= 0.00 & tipRate >= 0.00
     // MODIFIES: updates the tip amount
-    // EFFECTS: calculates and returns the Tip
+    // EFFECTS: returns the tip
     public BigDecimal tip () {
+        var rate = BigDecimal.valueOf(tipRate);
+        MathContext mc = new MathContext(3);
         
-        return BigDecimal.ZERO;
+        return billAmount.multiply(rate.divide(PERC)).round(mc);
     }
     
     // REQUIRES: billAmount >= 0.00 & tipRate >= 0.00
@@ -39,7 +44,7 @@ public class TipCalculator
     @Override
     public String toString() {
         return "TipCalculator{" + "Bill Amount=" + billAmount + ", Tip Rate=" + tipRate + 
-                "Tip=$"+ tip() +", Total=$" + total() + '}';
+                " Tip=$"+ tip() +", Total=$" + total() + '}';
     }
     
     

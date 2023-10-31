@@ -1,4 +1,4 @@
-# Challenge 1
+# Introductory Challenge
 
 ## Tip Calculator
 

@@ -38,7 +38,7 @@ public class TipCalculator
     // MODIFIES: updates the total
     // EFFECTS: calculates and returns the total
     public BigDecimal total () {
-        return BigDecimal.ZERO;
+        return billAmount.add(tip());
     }
 
     @Override

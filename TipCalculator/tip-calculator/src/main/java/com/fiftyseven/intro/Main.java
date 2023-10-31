@@ -1,7 +1,7 @@
 package com.fiftyseven.intro;
 
 /**
- * Demonstrates the usage of the Tip Calculator
+ * Examples of how to interact with {@code TipCalculator}
  * 
  * @author Jason Robinson
  * @version 1.0-SNAPSHOT, 30/10/23
@@ -9,7 +9,7 @@ package com.fiftyseven.intro;
 public class Main {
    
     /**
-     * Uses the {@code TipCalculator} to calculate simple tips
+     * Demonstrates the uses of {@code TipCalculator} to calculate simple tips
      * 
      * @param args optional parameters, currently unused
      */

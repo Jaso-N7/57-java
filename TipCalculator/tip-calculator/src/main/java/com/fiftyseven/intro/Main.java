@@ -20,9 +20,17 @@ public class Main {
         
         Scanner s = new Scanner(System.in);
         
+        // TODO: Instead of displaying an error message and exiting the program
+        //       keep asking the user for correct input until it is provided
+        // TODO: Don't allow the user to enter a negative number.
+        // TODO: Implement this program as a GUI that automatically updates the
+        //       values when any value changes
         System.out.print("What is the bill amount? ");
         BigDecimal billAmount = s.nextBigDecimal();
         
+        // TODO: Instead of the user entering the value of the tip as a percentage,
+        //       have the user drag a slider that rates satisfaction with the server,
+        //       using a range between 5% and 20%
         System.out.print("\nWhat is the tip rate? ");
         double tipRate = s.nextDouble();
         

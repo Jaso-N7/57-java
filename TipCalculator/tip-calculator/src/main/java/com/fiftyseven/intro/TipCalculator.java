@@ -19,7 +19,9 @@ public final class TipCalculator
     private final static BigDecimal PERC = new BigDecimal("100.00");
     private final static MathContext mc = new MathContext(3);
     
-    
+    // TODO: Ensure that the user can enter only numbers for the bill amount and 
+    //       the tip rate. If the user enters non-numeric values, display:
+    // 'Please enter a valid number for the bill amount'
     private TipCalculator (BigDecimal billAmount, double tipRate) {
         this.billAmount = billAmount;
         this.tipRate = tipRate;

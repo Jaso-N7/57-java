@@ -1,6 +1,8 @@
 package com.fiftyseven.io.tests.model;
 
 import com.fiftyseven.io.model.SayingHello;
+import java.util.HashMap;
+import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -11,50 +13,55 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class SayingHelloTest 
 {
-    private SayingHello sayName, sayFullName, sayHello;
-    private final static String 
-            NAME = "Brian",
-            FULL_NAME = "Connor McCleod",
-            DEFAULT_GREETING = "Hello, Guest, nice to meet you!";
+    private final Map<String, String> greetings = new HashMap();
+    private final static String
+        BRAIN_HELLO = "What's the plan for tonight, Brain?",
+        CONNOR_HELLO = "Greetings Connor, of the clan McLeod!",
+        ROGER_HELLO = "Who framed you, Roger Rabit?",
+        DEFAULT_GREETING = "Hello, %s, nice to meet you!";
     
-    
-    @BeforeEach
-    public void setup () {
-        sayName = SayingHello.at(NAME);
-        sayFullName = SayingHello.at(FULL_NAME);
-        sayHello = SayingHello.at();
+    public SayingHelloTest () {
+        greetings.put("Brain", BRAIN_HELLO);
+        greetings.put("Connor", CONNOR_HELLO);
+        greetings.put("Roger", ROGER_HELLO);
+        greetings.put("Anonymous", DEFAULT_GREETING);
     }
+    
     /**
      * 
      */
     @Test
     public void greeting_shouldContainName()
     {
-        assertTrue( sayName.greeting().contains(NAME) );
-        assertTrue( sayFullName.greeting().contains(FULL_NAME) );
+        SayingHello expectedBrain = SayingHello.at("Brain"),
+            expectedConnor = SayingHello.at("Connor"),
+            expectedGuest = SayingHello.at(),
+            expectedRandom = SayingHello.at("Anonymous");
+        
+        assertTrue( expectedBrain.greeting().contains("Brain") );
+        assertTrue( expectedConnor.greeting().contains("Connor") );
+        assertTrue( expectedGuest.greeting().contains("Guest") );
+        assertTrue( expectedRandom.greeting().contains("Anonymous") );
     }
     
     @Test
     public void greeting_whenNameIsNotSupplied() {
         
-        assertEquals( DEFAULT_GREETING, sayHello.greeting() );
+        assertTrue( SayingHello.at().greeting()
+                .equals( String.format(DEFAULT_GREETING, "Guest") ) 
+        );
     }
     
     @Test
     public void greeting_shouldMatchExpectedGreeting () {
         
-        String expectedNameGreeting = expectedGreeting( NAME ),
-                expectedFullNameGreeting = expectedGreeting( FULL_NAME );
+        for (var hello : greetings.entrySet()) {
+            
+            assertTrue( SayingHello.at(hello.getKey())
+                        .greeting()
+                        .equals(hello.getValue()) );
+        }
         
-        assertTrue( sayName.greeting()
-                .equals(expectedNameGreeting)
-        );
-        assertTrue( sayFullName.greeting()
-                .equals(expectedFullNameGreeting)
-        );
     }
     
-    private String expectedGreeting(String name) {
-        return "Hello, " + name + ", nice to meet you!";
-    }
 }

@@ -7,6 +7,7 @@ package com.fiftyseven.io.model;
 public class SayingHello {
     
     private final String name;
+    private final static String HELLO = "Hello, %s, nice to meet you!";
 
     private SayingHello(String name) {
         this.name = name;
@@ -28,7 +29,7 @@ public class SayingHello {
     // REQUIRES: name to be set
     // EFFECTS: return a greeting to name
     public String greeting() {
-        return null;
+        return String.format(HELLO, name);
     }
 
     @Override

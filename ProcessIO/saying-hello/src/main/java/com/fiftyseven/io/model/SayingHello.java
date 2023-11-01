@@ -25,10 +25,15 @@ public class SayingHello {
     public static SayingHello at() {
         return new SayingHello("Guest");
     }
-    
-    // REQUIRES: name to be set
-    // EFFECTS: return a greeting to name
+
+    /**
+     * Returns a greeting to the (un)specified user
+     * 
+     * @return a greeting
+     */
     public String greeting() {
+        // TODO: 2. Write a version of the program that displays different greetings
+        //          for different people
         return String.format(HELLO, name);
     }
 

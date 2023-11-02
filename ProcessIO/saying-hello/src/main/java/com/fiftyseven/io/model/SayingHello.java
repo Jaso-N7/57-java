@@ -1,8 +1,9 @@
 package com.fiftyseven.io.model;
 
 /**
- *
- * @author jason
+ * 
+ * @author Jason Robinson
+ * @version 2.0, 01/11/23
  */
 public class SayingHello {
     

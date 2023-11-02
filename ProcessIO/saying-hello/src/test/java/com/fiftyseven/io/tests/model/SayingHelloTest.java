@@ -16,15 +16,16 @@ public class SayingHelloTest
     private final Map<String, String> greetings = new HashMap();
     private final static String
         BRAIN_HELLO = "What's the plan for tonight, Brain?",
-        CONNOR_HELLO = "Greetings Connor, of the clan McLeod!",
-        ROGER_HELLO = "Who framed you, Roger Rabit?",
+        CONNOR_HELLO = "Greetings Connor, of the clan MacLeod!",
+        ROGER_HELLO = "Who framed you, Roger Rabbit?",
         DEFAULT_GREETING = "Hello, %s, nice to meet you!";
     
     public SayingHelloTest () {
         greetings.put("Brain", BRAIN_HELLO);
         greetings.put("Connor", CONNOR_HELLO);
         greetings.put("Roger", ROGER_HELLO);
-        greetings.put("Anonymous", DEFAULT_GREETING);
+        greetings.put("Anonymous", 
+            String.format(DEFAULT_GREETING, "Anonymous"));
     }
     
     /**
@@ -57,9 +58,13 @@ public class SayingHelloTest
         
         for (var hello : greetings.entrySet()) {
             
-            assertTrue( SayingHello.at(hello.getKey())
-                        .greeting()
-                        .equals(hello.getValue()) );
+            String hi = SayingHello.at( hello.getKey() )
+                        .greeting();
+            System.out.println( hello.getKey() + ": " + hi );
+            
+            System.out.println("Expects: \"" + hi + 
+                    "\"\nActual: \"" + hello.getValue() + "\"");
+            assertTrue( hi.equals(hello.getValue()) );
         }
         
     }

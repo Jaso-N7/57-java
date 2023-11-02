@@ -2,5 +2,5 @@
 
 ## Exercise 1. Saying Hello
 
-1. Constraints - In progress
-2. Challenges - In progress
+1. Constraints - Completed
+2. Challenges - Completed

@@ -47,7 +47,7 @@
                         <archive>
                             <manifest>
                                 <addClasspath>true</addClasspath>
-                                <mainClass>${exec.mainClass}</mainClass>
+                                <mainClass>com.fiftyseven.io.ui.SayHello</mainClass>
                                 <!-- Automatic-Module-Name>
                                     com.fiftyseven.io
                                 </Automatic-Module-Name -->

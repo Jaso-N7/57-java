@@ -11,7 +11,6 @@ import com.fiftyseven.io.model.Counter;
 public class Counter {
     
     private final String input;
-    private int inputCount;
     
     private final static String RESPONSE = "%s has %d character(s).";
     
@@ -35,13 +34,14 @@ public class Counter {
     // MODIFIES: constant variable RESPONSE
     // EFFECTS: returns the outcome of counting the number characters
     public String getDetails () {
-        return null;
+        return String.format(RESPONSE,
+                input, chars());
     }
     
     // REQUIRES: input to be non-null
     // MODIFIES: inputCount will be updated
     // EFFECTS: returns the number of characters
     public int chars () {
-        return 0;
+        return input.length();
     }
 }

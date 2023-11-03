@@ -13,17 +13,42 @@ import com.fiftyseven.io.model.Counter;
 public class CounterTest {
     
     private Counter c;
+    private final static String 
+            INPUT = "Homer",
+            RESPONSE = "%s has %d character(s).";
+    
     
     public CounterTest() {
     }
     
     @BeforeEach
     public void setUp() {
+        c = Counter.valueOf(INPUT);
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+    
+    @Test
+    public void responseContainsOriginalStringAtStart() {
+        
+        String res = c.getDetails();
+        
+        assertEquals(0, res.indexOf(INPUT));
+    }
+    
+    @Test
+    public void responseContainsOriginalString() {
+        
+        String res = c.getDetails();
+        
+        assertTrue(res.contains(INPUT));
+    }
+    
+    @Test
+    public void responseCountedCharacter () {
+        
+        int expected = INPUT.length();
+        int actual = c.chars();
+        
+        assertEquals(expected, actual);
+    }
 }

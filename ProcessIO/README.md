@@ -12,4 +12,4 @@ Project: `saying-hello`
 Project: `chars`
 
 1. Constraints - 3/3
-2. Challenges - 0/2
+2. Challenges - 1/2

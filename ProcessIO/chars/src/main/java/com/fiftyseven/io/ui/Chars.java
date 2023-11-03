@@ -1,5 +1,8 @@
 package com.fiftyseven.io.ui;
 
+import com.fiftyseven.io.model.Counter;
+import java.util.Scanner;
+
 /**
  * Counts the number of characters in a given String
  *
@@ -15,6 +18,11 @@ public class Chars
      */
     public static void main( String[] args )
     {
-        System.out.println( "Ready!" );
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.print( "What is the input string? " );
+        Counter c = Counter.valueOf( scan.nextLine() );
+        
+        System.out.println( c.getDetails() );
     }
 }

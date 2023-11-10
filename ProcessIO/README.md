@@ -4,12 +4,12 @@
 
 Project: `saying-hello`
 
-1. Constraints - Completed
-2. Challenges - Completed
+1. Constraints - Done
+2. Challenges - Done
 
 ## Exercise 2. Counting the Number of Characters
 
 Project: `chars`
 
-1. Constraints - 3/3
+1. Constraints - Done
 2. Challenges - 1/2

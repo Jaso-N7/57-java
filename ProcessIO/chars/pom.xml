@@ -18,6 +18,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>17</maven.compiler.release>
         <exec.mainClass>com.fiftyseven.io.ui.Chars</exec.mainClass>
+        <javafx.version>17.0.9</javafx.version>
+        <javafx.mainClass>com.fiftyseven.io.ui.gui.CharsApp</javafx.mainClass>
     </properties>
 
     <dependencies>
@@ -28,11 +30,25 @@
             <version>5.10.0</version>
             <scope>test</scope>
         </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-controls -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-fxml -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+
 
     </dependencies>
 
     <build>
-        <pluginManagement>
+        
             <plugins>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -54,9 +70,17 @@
                         <mainClass>${exec.mainClass}</mainClass>
                     </configuration>
                 </plugin>
+                
+                <plugin>
+                    <groupId>org.openjfx</groupId>
+                    <artifactId>javafx-maven-plugin</artifactId>
+                    <version>0.0.8</version>
+                    <configuration>
+                        <mainClass>${javafx.mainClass}</mainClass>
+                    </configuration>
+                </plugin>
 
             </plugins>
-            
-        </pluginManagement>
+       
     </build>
 </project>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<GridPane id="MainPane" 
+          prefHeight="400.0" 
+          prefWidth="600.0" 
+          xmlns="http://javafx.com/javafx/8.0.171"
+          xmlns:fx="http://javafx.com/fxml/1" 
+          fx:controller="com.fiftyseven.io.ui.gui.MainController">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20" />
+    </padding>
+    <children>
+        <Label GridPane.rowIndex="0" 
+               GridPane.columnIndex="0"
+               text="What is the input string?" />
+        <TextField GridPane.rowIndex="0" GridPane.columnIndex="1" />
+    </children>
+</GridPane>

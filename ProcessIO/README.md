@@ -11,5 +11,10 @@ Project: `saying-hello`
 
 Project: `chars`
 
+### Run
+
+- CLI: `mvn -q exec:java`
+- GUI: `mvn -q javafx:run`
+
 1. Constraints - Done
 2. Challenges - 1/2

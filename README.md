@@ -9,7 +9,7 @@ These challenges were developed using Java (JDK 17).
 All projects were generated using Maven, to keep code IDE agnostic.
 
 Within any of the directories containing a POM, you can run the following command
-`mvn verify exec:java`
+`mvn verify exec:java` or otherwise stated per project, if using a GUI or Web solution.
 
 ## Challenges
 

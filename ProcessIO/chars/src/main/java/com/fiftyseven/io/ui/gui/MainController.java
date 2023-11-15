@@ -20,14 +20,6 @@ public class MainController {
     @FXML
     private TextField inputWord;
 
-    /**
-     * Initializes the controller class.
-     */
-    @FXML
-    public void initialize() {
-        // TODO
-    }
-
     @FXML
     private void countCharacters() throws IOException {
 

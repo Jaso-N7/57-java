@@ -30,17 +30,22 @@ public class Counter {
         return new Counter(word);
     }
     
-    // REQUIRES: input to be non-null
-    // MODIFIES: constant variable RESPONSE
-    // EFFECTS: returns the outcome of counting the number characters
+    /**
+     * Given that {@code .valueOf(String s)} is non-null,
+     * returns the outcome of counting the number characters.
+     * 
+     * @return the details of counting the number characters
+     */
     public String getDetails () {
         return String.format(RESPONSE,
                 input, chars());
     }
     
-    // REQUIRES: input to be non-null
-    // MODIFIES: inputCount will be updated
-    // EFFECTS: returns the number of characters
+    /**
+     * As long as the {@code .valueOf(String s)} is non-null, 
+     * returns the number of characters.
+     * @return the number of characters in the given string
+     */
     public int chars () {
         return input.length();
     }

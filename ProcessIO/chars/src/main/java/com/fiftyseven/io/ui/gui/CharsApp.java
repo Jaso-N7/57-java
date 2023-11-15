@@ -17,8 +17,9 @@ public class CharsApp extends Application {
     
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("main"), 380, 120);
+        scene = new Scene(loadFXML("main"));
         stage.setScene(scene);
+        stage.setTitle("Counting Characters");
         stage.show();
     }
     

@@ -5,6 +5,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import com.fiftyseven.io.model.*;
+import java.io.IOException;
+import javafx.application.Platform;
 
 /**
  * FXML Controller class
@@ -27,16 +29,29 @@ public class MainController {
     }
 
     @FXML
-    private void countCharacters() {
+    private void countCharacters() throws IOException {
 
         String word = inputWord.getText();
 
         if (word.isEmpty() || word.isBlank()) {
             countResults.setText("");
         } else {
-            Counter c = Counter.valueOf(inputWord.getText());
-            countResults.setText(c.getDetails());
+            new Thread(() -> {
+                try {
+
+                    Platform.runLater(() -> {
+
+                        Counter c = Counter.valueOf(inputWord.getText());
+                        countResults.setText(c.getDetails());
+
+                    });
+
+                } catch (Exception e) {
+                    // Do nothing for now
+                }
+            }).start();
         }
+
     }
 
 }

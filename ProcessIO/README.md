@@ -17,4 +17,4 @@ Project: `chars`
 - GUI: `mvn -q javafx:run`
 
 1. Constraints - Done
-2. Challenges - 1/2
+2. Challenges - Done
